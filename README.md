@@ -29,6 +29,12 @@ downlaod Vagrantfile by wget https://eftakhairul_mtl@bitbucket.org/exerepo/snapl
 vagrant up
 ```
 
+With provision
+
+```sh
+vagrant up --provision
+```
+
 Add IP to your local /etc/host once in developing life circle
 ```sh
 echo "192.168.33.10   local.backend.snaplabs.io" >> /etc/hosts
@@ -43,11 +49,13 @@ vagrant ssh
 
 Some important commands
 ```sh
+sudo vagrant
 sudo apt-get update
-chwon -R vagrant:vagrant  /opt/hbase/bin/start-hbase.sh
-chwon -R vagrant:vagrant /opt/opentsdb/start.sh
-chwon -R vagrant:vagrant /opt/orientdb/start.sh 
-echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/environment
+sudo echo "JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> /etc/environment
+source /etc/environment
+sudo chwon -R vagrant:vagrant  /opt/hbase/bin/start-hbase.sh
+sudo chwon -R vagrant:vagrant /opt/opentsdb/start.sh
+sudo chwon -R vagrant:vagrant /opt/orientdb/start.sh 
 /opt/hbase/bin/start-hbase.sh
 /opt/opentsdb/start.sh
 /opt/orientdb/start.sh
@@ -73,10 +81,10 @@ OrientDB
 --------------
 
 ```sh
-Studio Port: 2480
 Access Port: 2424
 USERNAME : root
 PASSWORD : exedev2015
+Admin URL: http://192.168.33.10:2480
 ```
 
 Rabbit MQ
@@ -87,12 +95,16 @@ port: 15672
 url: amqp://admin:admin@192.168.33.10
 ```
 
-
+HBsae
+--------------
+```sh
+port: 60010
+```
 OpenTBS
 --------------
 
 ```sh
-port: 4242
+Admin UEL: http://192.168.33.10:4242
 ```
 
 Version

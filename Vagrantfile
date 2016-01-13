@@ -58,7 +58,23 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    
+    su vagrant
+   
+	
+	sudo echo "JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64" >> /etc/environment
+	sudo echo "HBASE_HOME=/opt/hbase" >> /etc/environment
+	source /etc/environment
+
+	sudo chown -R vagrant:vagrant  /opt/hbase/bin/start-hbase.sh
+	sudo chown -R vagrant:vagrant /opt/opentsdb/start.sh
+	sudo chown -R vagrant:vagrant /opt/orientdb/start.sh 
+	
+	/opt/orientdb/start.sh
+	/opt/hbase/bin/start-hbase.sh
+	sleep 20
+	/opt/opentsdb/start.sh
+	
+	
+	env COMPRESSION=NONE /opt/hbase/create_tsdb_tables.sh
   SHELL
 end
