@@ -15,10 +15,16 @@ Vagrant.configure(2) do |config|
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
+
+  #Password 
+  config.ssh.username = 'vagrant'
+  config.ssh.password = 'vagrant'
+
+
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-#  config.vm.network "forwarded_port", guest: 2424, host: 2424
+  config.vm.network "forwarded_port", guest: 2424, host: 2424
   config.vm.network "forwarded_port", guest: 2480, host: 2480
   config.vm.network "forwarded_port", guest: 5672, host: 5672
   config.vm.network "forwarded_port", guest: 15672, host: 15672
