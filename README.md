@@ -1,10 +1,9 @@
-EXE Snaplabs Backend
+EXEApps Snaplabs Backend
 =========
 
 A standard EXE Ubuntu DEV  box. It has pre-installed following extentions 
 
-  
-  
+   
   - Redis
   - OrientDB 2.1.6 
   - Rabbit MQ
@@ -22,11 +21,10 @@ How Download and Install Vagrant
 How to use it
 --------------
 
+To intigrate to your project, run following command
+
 ```sh
-mkdir snaplabs-backend
-cd snaplabs-backend
-downlaod Vagrantfile by wget https://eftakhairul_mtl@bitbucket.org/exerepo/snaplabs-backend.git
-vagrant up
+bash < <(curl -s -S -L https://raw.githubusercontent.com/exeapps/snaplabs-backend/master/installer)
 ```
 
 With provision
@@ -88,29 +86,29 @@ OrientDB
 Access Port: 2424
 USERNAME : root
 PASSWORD : exedev2015
-Admin URL: http://192.168.33.10:2480
+Admin Panel: http://192.168.33.10:2480
 ```
 
 Rabbit MQ
 --------------
 
 ```sh
-port: 15672
-url: amqp://admin:admin@192.168.33.10
-Admin URL: http://192.168.33.10:15672/
+Port: 15672
+Config URL: amqp://admin:admin@192.168.33.10
+Admin Panel: http://192.168.33.10:15672/
 ```
 
 HBsae
 --------------
 ```sh
-port: 60010
+Port: 60010
 Admin URL: http://192.168.33.10:60010
 ```
 OpenTBS
 --------------
 
 ```sh
-Admin UEL: http://192.168.33.10:4242
+Admin Panel: http://192.168.33.10:4242
 ```
 
 Version
