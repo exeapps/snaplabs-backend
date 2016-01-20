@@ -75,8 +75,8 @@ Redis
 --------------
 
 ```sh
-port: 6379
-cli client: redis-cli -h 192.168.33.10 
+Port: 6379
+Cli client: redis-cli -h 192.168.33.10 
 ```
 
 OrientDB
