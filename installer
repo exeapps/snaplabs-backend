@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+wget https://raw.githubusercontent.com/exeapps/snaplabs-backend/master/Vagrantfile
+vagrant up --provision

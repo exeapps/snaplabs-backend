@@ -73,7 +73,8 @@ Vagrant.configure(2) do |config|
 
 	sudo chown -R vagrant:vagrant  /opt/hbase/bin/start-hbase.sh
 	sudo chown -R vagrant:vagrant /opt/opentsdb/start.sh
-	sudo chown -R vagrant:vagrant /opt/orientdb/start.sh 
+	sudo chown -R vagrant:vagrant /opt/orientdb/start.sh
+        sudo chown -R vagrant:vagrant /opt 
 	
 	/opt/orientdb/start.sh
 	/opt/hbase/bin/start-hbase.sh
