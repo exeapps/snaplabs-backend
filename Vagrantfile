@@ -24,13 +24,17 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 2424, host: 2424
-  config.vm.network "forwarded_port", guest: 2480, host: 2480
-  config.vm.network "forwarded_port", guest: 5672, host: 5672
-  config.vm.network "forwarded_port", guest: 15672, host: 15672
-  config.vm.network "forwarded_port", guest: 6379, host: 6379
-  config.vm.network "forwarded_port", guest: 60010, host: 60010
-  config.vm.network "forwarded_port", guest: 4242, host: 4242  
+  ## Enable them if you need to use them  as local port
+	
+#  config.vm.network "forwarded_port", guest: 2424, host: 2424
+#  config.vm.network "forwarded_port", guest: 2480, host: 2480
+#  config.vm.network "forwarded_port", guest: 5672, host: 5672
+#  config.vm.network "forwarded_port", guest: 15672, host: 15672
+#  config.vm.network "forwarded_port", guest: 6379, host: 6379
+#  config.vm.network "forwarded_port", guest: 60010, host: 60010
+#  config.vm.network "forwarded_port", guest: 4242, host: 4242
+
+  
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.10"
